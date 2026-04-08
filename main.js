@@ -50,7 +50,7 @@ function showPage(id) {
   const target = document.getElementById(id);
   if (target) {
     target.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   }
 }
 

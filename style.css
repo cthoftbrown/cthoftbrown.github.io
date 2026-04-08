@@ -126,7 +126,7 @@ nav.scrolled {
 .page.active { display: block; }
 
 /* ── HERO ── */
-#home {
+#home-hero {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -848,7 +848,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: gap;
+  flex-wrap: wrap;
   gap: 1rem;
   background: rgba(2,8,16,0.8);
 }
@@ -895,6 +895,55 @@ footer {
   margin: 2rem 0;
 }
 
+/* ── SECTION SUBTITLE ── */
+.section-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+/* ── ALBUM TEASER CTA ── */
+.album-teaser-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── LISTENING PARTY ── */
+.listening-party-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.listening-party-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.listening-party-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--teal-bright);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.listening-party-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 1.2rem 1.5rem; }
@@ -912,16 +961,91 @@ footer {
     z-index: 99;
   }
   .nav-links.open a { font-size: 1.2rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; }
+
   .section { padding: 5rem 1.5rem; }
-  .album-teaser { gap: 3rem; padding: 4rem 1.5rem; }
+
+  /* Hero */
+  .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 2rem; }
+
+  /* Album teaser */
+  .album-teaser {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 4rem 1.5rem;
+  }
   .album-teaser-art img { width: 260px; height: 260px; }
-  footer { flex-direction: column; text-align: center; }
+  .album-teaser-info { max-width: 100%; }
+  .countdown { justify-content: center; }
+  .album-teaser-cta { justify-content: center; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-photo-wrap { max-width: 320px; margin: 0 auto; }
+  .about-photo-wrap::after { display: none; }
+
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 1.5rem; }
+
+  /* Listening party */
+  .listening-party-layout { justify-content: center; }
+  .listening-party-img { width: 240px; height: 240px; }
+
+  /* Soundtrack */
+  .soundtrack-hero { padding: 5rem 1.5rem 2rem; }
+  .soundtrack-description { font-size: 0.95rem; margin-bottom: 3rem; }
+  .services-grid { padding: 0 1.5rem 4rem; gap: 1.5rem; }
+
+  /* Reviews */
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
 }
 
 @media (max-width: 600px) {
-  .album-teaser-art img { width: 220px; height: 220px; }
-  .about-highlights { grid-template-columns: 1fr; }
   .hero-title { font-size: clamp(2.5rem, 15vw, 5rem); }
+  .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.25em; }
+  .hero-subtitle { font-size: 0.75rem; letter-spacing: 0.15em; }
+  .hero-cta { gap: 1rem; }
+
+  .album-teaser { padding: 3rem 1rem; }
+  .album-teaser-art img { width: 220px; height: 220px; }
+  .album-teaser-info h2 { font-size: 1.8rem; }
+
+  .countdown { gap: 1rem; }
+  .countdown-number { font-size: 1.8rem; }
+  .countdown-unit { min-width: 50px; }
+
+  .section { padding: 3.5rem 1rem; }
+  .section-header { margin-bottom: 2.5rem; }
+
+  .about-highlights { grid-template-columns: 1fr; }
+  .about-text p { font-size: 0.9rem; }
+
+  .section-subtitle { font-size: 1.4rem; }
+  .album-grid { grid-template-columns: 1fr; }
+  .promo-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  .listening-party-img { width: 100%; height: auto; max-width: 280px; }
+  .listening-party-layout { flex-direction: column; align-items: center; text-align: center; }
+  .listening-party-desc { max-width: 100%; }
+
+  .services-grid { grid-template-columns: 1fr; padding: 0 1rem 3rem; }
+  .service-card { padding: 2rem 1.5rem; }
+
+  .contact-layout { padding: 6rem 1rem 4rem; gap: 2.5rem; }
+  .contact-info h2 { font-size: 1.8rem; }
+
+  .btn-primary, .btn-outline {
+    font-size: 0.7rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .social-link { font-size: 0.8rem; padding: 0.8rem 1rem; }
+
+  footer { padding: 1.5rem 1rem; }
+  .footer-social { flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+  .footer-social a { font-size: 0.7rem; }
 }
